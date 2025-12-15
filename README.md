@@ -108,22 +108,23 @@ projet-seattle-energy
 │
 └── README.md
 
+```
 ---
-- Docker :
+- **Docker** :
 ----
 docker build -t energy-service .
 docker run -p 8080:8080 energy-service
 
-- Test API :
+- **Test API**:
 -----
 import requests
 r = requests.post("https://energy-model-146194267768.europe-west1.run.app", json=payload)
 print(r.json())
 
-- Résultat attendu :
+- **Résultat attendu** :
 ------
 Réponse JSON : {'prediction': 56.85652750516837}
 
-* Auteur
+**Auteur**
 ------
 Projet réalisé par Cheikh
