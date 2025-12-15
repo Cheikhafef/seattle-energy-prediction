@@ -2,8 +2,10 @@
 ----
 📌 **Contexte**
 ----
+
 Seattle vise la neutralité carbone en 2050. Les bâtiments représentent une part importante des émissions de gaz à effet de serre. Cependant, les relevés de consommation sont coûteux et incomplets.
 👉 Objectif : prédire la consommation énergétique et les émissions de CO₂ à partir des données structurelles des bâtiments.
+
 -----
 🎯 **Objectifs du projet**
 ----
@@ -19,16 +21,20 @@ Seattle vise la neutralité carbone en 2050. Les bâtiments représentent une pa
 
 🗂️ **Données**
 -----
+
 Source : dataset énergétique des bâtiments de Seattle.
 Taille après nettoyage : 3119 lignes, 50 colonnes.
 Variable cible : SiteEUIWN (kBtu/sf) → intensité énergétique normalisée par la météo.
+
 --------
 🔧 **Prétraitement**
 ----
+
 Suppression des colonnes non pertinentes (administratives, énergétiques à risque de fuite, trop vides).
 Détection et suppression des incohérences et outliers (méthode IQR).
 Encodage des variables catégorielles (One-Hot Encoding → 128 colonnes).
 Feature engineering :BuildingAge , FloorsPerBuilding , ParkingRatio , EnergyUsePerArea , GHGPerArea , etc.
+
 -------
 📈 **Analyse exploratoire**
 - Distribution asymétrique des variables énergétiques → transformation log recommandée.
@@ -80,25 +86,26 @@ Top 3 des variables les plus influentes :
  📁 **Structure du projet**
  -----
 projet-seattle-energy
+---
 ├── API/
-│ ├── Dockerfile
-│ ├── bentofile.yaml
-│ ├── pipeline.joblib
-│ ├── requirements.txt
-│ └── service.py # API BentoML
+│   ├── Dockerfile
+│   ├── bentofile.yaml
+│   ├── pipeline.joblib
+│   ├── requirements.txt
+│   └── service.py          # API BentoML
 │
 ├── Data/
-│ ├── 2016_Building_Energy_Benchmark.csv
-│ ├── data_cleaned.csv
-│ └── data_prepared2.csv
+│   ├── 2016_Building_Energy_Benchmarking.csv
+│   ├── data_cleaned.csv
+│   └── data_prepared2.csv
 │
 ├── Notebooks/
-│ ├── Analyse-Exploratoire.ipynb
-│ ├── Feature-Engineering.ipynb
-│ └── Modele.ipynb
+│   ├── Analyse-Exploratoire.ipynb
+│   ├── Feature-Engineering.ipynb
+│   └── Modele.ipynb
 │
 └── README.md
-
+---
 - Docker :
 ----
 docker build -t energy-service .
