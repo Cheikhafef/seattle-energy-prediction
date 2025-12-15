@@ -1,0 +1,7 @@
+bentoml[fastapi]==1.4.30
+scikit-learn==1.6.1
+pandas==2.1.0
+numpy==1.26.4
+joblib==1.3.2
+pydantic==2.6.1
+uvicorn
