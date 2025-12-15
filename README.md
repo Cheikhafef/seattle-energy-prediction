@@ -85,6 +85,8 @@ Top 3 des variables les plus influentes :
 
  📁 **Structure du projet**
  -----
+
+ ```text
 projet-seattle-energy
 ---
 ├── API/
@@ -105,6 +107,7 @@ projet-seattle-energy
 │   └── Modele.ipynb
 │
 └── README.md
+
 ---
 - Docker :
 ----
